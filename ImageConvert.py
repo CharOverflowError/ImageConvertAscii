@@ -1,19 +1,16 @@
-from skimage import io, img_as_float
+from skimage import io
 from skimage.color import rgb2gray
 from skimage.transform import rescale
 import numpy as np
 import math
-from matplotlib import pyplot as plt
 
 characters = """ .:-=+*#%@"""
-
 
 img = io.imread("image.png")
 img = rgb2gray(img)
 height, width = img.shape
 img = rescale(img, (400 / width))
 height, width = img.shape
-print(img.shape)
 
 character_width = 4
 character_height = 10
